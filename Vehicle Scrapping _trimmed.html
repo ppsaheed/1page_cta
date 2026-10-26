@@ -59,6 +59,8 @@ td.num,th.num{text-align:center}
 .qty{font-weight:800;color:var(--navy)}
 .price-input{width:100%;max-width:155px;padding:10px 11px;border:1px solid #cbd5e1;border-radius:9px;font:inherit}
 .price-input:focus{outline:2px solid #07883c55;border-color:var(--green)}
+.spare-tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.78rem;font-weight:600;background:#edf2f7;color:#334155;border:1px solid #dbe2ea;white-space:nowrap}
+.spare-tag.centre{background:#fef3c7;color:#92400e;border-color:#fde68a}
 tfoot{background:#e5f6e9;font-weight:800;color:var(--navy)}
 tfoot td{border-bottom:0}
 .bottom-total{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;background:#f8fafc;border-top:1px solid var(--line)}
@@ -88,9 +90,10 @@ footer small{color:#c6d4e4}
  .feature{padding:14px}.btn{width:100%}.actions{display:grid}
  .table-wrap{overflow-x:hidden;width:100%}
  table{width:100%;min-width:0}
- th,td{padding:8px 4px;font-size:0.78rem}
+ th,td{padding:8px 3px;font-size:0.76rem}
  th.num,td.num{padding:8px 2px}
- .price-input{max-width:100%;width:100%;padding:6px 4px;font-size:0.8rem}
+ .spare-tag{font-size:0.7rem;padding:2px 4px}
+ .price-input{max-width:100%;width:100%;padding:6px 3px;font-size:0.78rem}
 }
 </style>
 </head>
@@ -115,9 +118,9 @@ footer small{color:#c6d4e4}
     <div id="formMessage" class="toast" role="alert"></div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th class="num">#</th><th>Vehicle model</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
-        <tbody id="vehicleRows"><tr><td class="num">1</td><td><strong>Alto</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Alto price per vehicle in rupees" data-index="0" placeholder="₹ per vehicle"></td></tr><tr><td class="num">2</td><td><strong>WagonR</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="WagonR price per vehicle in rupees" data-index="1" placeholder="₹ per vehicle"></td></tr><tr><td class="num">3</td><td><strong>UVA</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="UVA price per vehicle in rupees" data-index="2" placeholder="₹ per vehicle"></td></tr><tr><td class="num">4</td><td><strong>Spark</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Spark price per vehicle in rupees" data-index="3" placeholder="₹ per vehicle"></td></tr><tr><td class="num">5</td><td><strong>Aira</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Aira price per vehicle in rupees" data-index="4" placeholder="₹ per vehicle"></td></tr><tr><td class="num">6</td><td><strong>Eon</strong></td><td class="num qty">2</td><td>Not specified</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Eon price per vehicle in rupees" data-index="5" placeholder="₹ per vehicle"></td></tr><tr><td class="num">7</td><td><strong>Etios</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Etios price per vehicle in rupees" data-index="6" placeholder="₹ per vehicle"></td></tr><tr><td class="num">8</td><td><strong>Zest</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zest price per vehicle in rupees" data-index="7" placeholder="₹ per vehicle"></td></tr><tr><td class="num">9</td><td><strong>M800</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="M800 price per vehicle in rupees" data-index="8" placeholder="₹ per vehicle"></td></tr><tr><td class="num">10</td><td><strong>Zen</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zen price per vehicle in rupees" data-index="9" placeholder="₹ per vehicle"></td></tr><tr><td class="num">11</td><td><strong>Figo</strong></td><td class="num qty">4</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Figo price per vehicle in rupees" data-index="10" placeholder="₹ per vehicle"></td></tr><tr><td class="num">12</td><td><strong>Punto</strong></td><td class="num qty">5</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Punto price per vehicle in rupees" data-index="11" placeholder="₹ per vehicle"></td></tr><tr><td class="num">13</td><td><strong>Santro</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Santro price per vehicle in rupees" data-index="12" placeholder="₹ per vehicle"></td></tr><tr><td class="num">14</td><td><strong>Civic</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Civic price per vehicle in rupees" data-index="13" placeholder="₹ per vehicle"></td></tr><tr><td class="num">15</td><td><strong>SX4</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="SX4 price per vehicle in rupees" data-index="14" placeholder="₹ per vehicle"></td></tr><tr><td class="num">16</td><td><strong>Fiesta</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Fiesta price per vehicle in rupees" data-index="15" placeholder="₹ per vehicle"></td></tr></tbody>
-        <tfoot><tr><td></td><td>Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
+        <thead><tr><th class="num">#</th><th>Vehicle model</th><th>Spare part</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
+        <tbody id="vehicleRows"></tbody>
+        <tfoot><tr><td></td><td colspan="2">Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
       </table>
     </div>
     <div class="bottom-total"><div><strong>Estimated quotation total</strong><div class="sub">Calculated from the quantities and prices you enter</div></div><div class="total-value" id="grandTotal">₹ 0</div></div>
@@ -132,29 +135,30 @@ footer small{color:#c6d4e4}
 
 <script>
 const vehicles = [
-  {model:"Alto",qty:2,fuel:"Petrol"},
-  {model:"WagonR",qty:2,fuel:"Petrol"},
-  {model:"UVA",qty:1,fuel:"Petrol"},
-  {model:"Spark",qty:1,fuel:"Petrol"},
-  {model:"Aira",qty:1,fuel:"Diesel"},
-  {model:"Eon",qty:2,fuel:"Not specified"},
-  {model:"Etios",qty:1,fuel:"Diesel"},
-  {model:"Zest",qty:1,fuel:"Diesel"},
-  {model:"M800",qty:2,fuel:"Petrol"},
-  {model:"Zen",qty:1,fuel:"Petrol"},
-  {model:"Figo",qty:4,fuel:"Diesel"},
-  {model:"Punto",qty:5,fuel:"Diesel"},
-  {model:"Santro",qty:2,fuel:"Petrol"},
-  {model:"Civic",qty:1,fuel:"Petrol"},
-  {model:"SX4",qty:1,fuel:"Petrol"},
-  {model:"Fiesta",qty:1,fuel:"Petrol"}
+  {model:"Alto",part:"Engine piece",qty:2,fuel:"Petrol"},
+  {model:"WagonR",part:"Engine piece",qty:2,fuel:"Petrol"},
+  {model:"UVA",part:"Engine piece",qty:1,fuel:"Petrol"},
+  {model:"Spark",part:"Engine piece",qty:1,fuel:"Petrol"},
+  {model:"Aira",part:"Centre piece",qty:1,fuel:"Diesel"},
+  {model:"Eon",part:"Engine piece",qty:2,fuel:"Not specified"},
+  {model:"Etios",part:"Engine piece",qty:1,fuel:"Diesel"},
+  {model:"Zest",part:"Centre piece",qty:1,fuel:"Diesel"},
+  {model:"M800",part:"Centre piece",qty:2,fuel:"Petrol"},
+  {model:"Zen",part:"Engine piece",qty:1,fuel:"Petrol"},
+  {model:"Figo",part:"Engine piece",qty:4,fuel:"Diesel"},
+  {model:"Punto",part:"Engine piece",qty:5,fuel:"Diesel"},
+  {model:"Santro",part:"Engine piece",qty:2,fuel:"Petrol"},
+  {model:"Civic",part:"Engine piece",qty:1,fuel:"Petrol"},
+  {model:"SX4",part:"Engine piece",qty:1,fuel:"Petrol"},
+  {model:"Fiesta",part:"Engine piece",qty:1,fuel:"Petrol"}
 ];
 const rows = document.getElementById("vehicleRows");
 if (rows) {
   rows.innerHTML = "";
   vehicles.forEach((v,i)=>{
     const tr=document.createElement("tr");
-    tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
+    const isCentre = v.part === "Centre piece";
+    tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td><span class="spare-tag${isCentre ? ' centre' : ''}">${v.part}</span></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
     rows.appendChild(tr);
   });
 }
@@ -207,7 +211,7 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
   textMsg += `Contact Phone: ${phone}\n\n`;
   textMsg += `PRICE OFFER (per vehicle):\n`;
   quoted.forEach(v => {
-    textMsg += `• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${v.price.toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(v.price * v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
+    textMsg += `• ${v.model} (${v.part}) | ${v.fuel} | Qty ${v.qty} | ₹${v.price.toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(v.price * v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
   });
   textMsg += `\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
   textMsg += "\nPlease confirm the final price and inspection/pickup conditions.";
@@ -223,6 +227,7 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
     grand_total: sum,
     vehicles_data: quoted.map(v => ({
       model: v.model,
+      spare_part: v.part,
       fuel: v.fuel,
       qty: v.qty,
       price: v.price,
