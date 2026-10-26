@@ -1,178 +1,1458 @@
 <!DOCTYPE html>
-<!-- saved from url=(0082)file:///home/spareezy/DEV/1page_cta/vehicle_scrapping_vendor_price_submission.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#0a192f">
+  <title>Vehicle Scrapping | Vendor Price Submission Portal</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Vehicle Scrapping Kerala | Vendor Bulk Price Submission">
+  <meta name="description" content="Submit your best scrap rate for 28 vehicles across 16 models. Instant total calculation and direct submission via WhatsApp.">
+  
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vehicle Scrapping Kerala · Bulk Vendor Quotation">
+  <meta property="og:description" content="Submit vendor purchase rates for 28 scrap vehicles (Alto, WagonR, Figo, Punto, etc.) directly on WhatsApp.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0d2b52">
-<title>Vehicle Scrapping | Vendor Price Submission</title>
-<style>
-:root{--navy:#102b50;--green:#07883c;--green2:#0aa34b;--ink:#18263d;--muted:#64748b;--line:#dce5ee;--pale:#f2f7fb;--white:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f4f7fa;line-height:1.5}
-a{color:inherit}
-.wrap{max-width:1120px;margin:auto;padding:0 18px}
-header{background:#fff;border-bottom:1px solid #e7edf3}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:1.05rem}
-.logo{width:45px;height:45px;border-radius:14px;background:#e2f6e9;color:var(--green);display:grid;place-items:center;font-size:25px}
-.brand small{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.16em;font-weight:700}
-.pill{border-radius:999px;padding:8px 12px;background:#eaf8ef;color:#08763a;font-size:.8rem;font-weight:700;white-space:nowrap}
-.hero{background:linear-gradient(120deg,#fff 0%,#f5fbff 62%,#e7f7ec 100%);overflow:hidden}
-.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding-top:46px;padding-bottom:42px}
-.eyebrow{color:var(--green);font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.04;letter-spacing:-.045em;color:var(--navy);margin:12px 0 16px}
-h1 span{color:var(--green)}
-.hero p{font-size:1.08rem;color:#475569;max-width:600px;margin:0 0 22px}
-.hero-art{min-height:225px;border-radius:26px;background:linear-gradient(145deg,#dcefe5,#f4f8fc);display:grid;place-items:center;position:relative;overflow:hidden}
-.car-stack{font-size:clamp(5rem,12vw,8.5rem);filter:drop-shadow(0 12px 9px #0e2a5020);line-height:1}
-.art-caption{position:absolute;bottom:17px;left:18px;right:18px;text-align:center;color:var(--navy);font-size:.85rem;font-weight:750}
-.btn{border:0;border-radius:14px;padding:14px 18px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .15s,filter .15s}
-.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
-.btn-green{background:var(--green);color:#fff;box-shadow:0 8px 18px #07883c22}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-outline{border:1px solid var(--line);background:#fff;color:var(--navy)}
-main{padding:28px 0 44px}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px}
-h2{margin:0;color:var(--navy);font-size:1.55rem;letter-spacing:-.025em}
-.sub{color:var(--muted);font-size:.92rem;margin:5px 0 0}
-.summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:130px;flex:1}
-.stat strong{display:block;color:var(--navy);font-size:1.3rem}
-.stat span{color:var(--muted);font-size:.78rem}
-.panel{background:#fff;border:1px solid #e4ebf2;border-radius:20px;box-shadow:0 8px 28px #102b5009;overflow:hidden}
-.panel-top{padding:20px 20px 12px}
-.notice{margin:0 20px 16px;background:#eef6ff;border-radius:12px;padding:12px 14px;color:#24446d;font-size:.88rem}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px}
-.field label{display:block;font-size:.84rem;font-weight:750;color:#334155;margin-bottom:6px}
-.field input,.field textarea{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;font:inherit;background:#fff;color:var(--ink);outline:none}
-.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #07883c18}
-.field.full{grid-column:1/-1}
-.table-wrap{overflow-x:auto;border-top:1px solid var(--line)}
-table{width:100%;border-collapse:collapse;min-width:650px}
-thead{background:var(--navy);color:#fff}
-th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #e6edf3}
-th{font-size:.81rem;letter-spacing:.02em}
-td{font-size:.91rem}
-tbody tr:nth-child(even){background:#f7f9fb}
-td.num,th.num{text-align:center}
-.qty{font-weight:800;color:var(--navy)}
-.price-input{width:100%;max-width:155px;padding:10px 11px;border:1px solid #cbd5e1;border-radius:9px;font:inherit}
-.price-input:focus{outline:2px solid #07883c55;border-color:var(--green)}
-tfoot{background:#e5f6e9;font-weight:800;color:var(--navy)}
-tfoot td{border-bottom:0}
-.bottom-total{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;background:#f8fafc;border-top:1px solid var(--line)}
-.total-value{font-size:1.3rem;color:var(--green);font-weight:850}
-.actions{display:flex;flex-wrap:wrap;gap:10px;padding:0 20px 20px}
-.hint{padding:0 20px 18px;color:var(--muted);font-size:.82rem}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.feature{padding:17px;background:#fff;border:1px solid var(--line);border-radius:15px;display:flex;gap:12px;align-items:flex-start}
-.feature .ico{font-size:1.5rem}
-.feature strong{display:block;color:var(--navy);font-size:.91rem}
-.feature span{font-size:.8rem;color:var(--muted)}
-footer{background:var(--navy);color:#eaf2fb;padding:24px 0}
-.foot{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
-footer small{color:#c6d4e4}
-.toast{display:none;margin:0 20px 16px;padding:12px 14px;border-radius:10px;background:#fff4df;color:#804b00;font-size:.88rem}
-@media(max-width:760px){
- .wrap{padding:0 13px}.nav{min-height:66px}.pill{font-size:.72rem;padding:7px 9px}
- .hero-inner{grid-template-columns:1fr;padding-top:32px;padding-bottom:28px;gap:20px}
- .hero-art{min-height:160px}.car-stack{font-size:5rem}h1{font-size:2.55rem}
- main{padding-top:23px}.section-head{align-items:flex-start;flex-direction:column}
- .form-grid{grid-template-columns:1fr;padding-left:14px;padding-right:14px}
- .field.full{grid-column:auto}.panel-top{padding:17px 14px 10px}
- .notice{margin-left:14px;margin-right:14px}.actions{padding-left:14px;padding-right:14px}
- .bottom-total{padding:14px;align-items:flex-start;flex-direction:column}
- .hint{padding-left:14px;padding-right:14px}.features{grid-template-columns:1fr}
- .feature{padding:14px}.btn{width:100%}.actions{display:grid}
-}
-</style>
+  <style>
+    :root {
+      --navy-950: #060d17;
+      --navy-900: #0d1b2a;
+      --navy-850: #132438;
+      --navy-800: #1b2f48;
+      --navy-700: #264161;
+      --emerald-600: #059669;
+      --emerald-500: #10b981;
+      --emerald-400: #34d399;
+      --emerald-50: #ecfdf5;
+      --emerald-100: #d1fae5;
+      --amber-500: #f59e0b;
+      --amber-50: #fffbeb;
+      --blue-500: #3b82f6;
+      --blue-50: #eff6ff;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.04);
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f7fb;
+      color: var(--slate-800);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Navigation */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #e6f7ee 0%, #c8f0d8 100%);
+      color: var(--emerald-600);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.2);
+    }
+
+    .brand-text h1 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--emerald-600);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-500);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0d1b2a 0%, #152943 60%, #0e302b 100%);
+      color: #ffffff;
+      padding: 44px 0 54px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--emerald-400);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .hero-title .highlight {
+      color: var(--emerald-400);
+      background: linear-gradient(90deg, #34d399, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .hero-stats-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      min-width: 130px;
+    }
+
+    .hero-stat-card strong {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-stat-card span {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-card-icon {
+      font-size: 28px;
+    }
+
+    .hero-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hero-card-sub {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .hero-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+    }
+
+    .hero-checklist li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--emerald-400);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Main Container */
+    main {
+      padding: 34px 0 60px;
+      flex: 1;
+    }
+
+    /* Panel Card */
+    .panel {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .panel-header {
+      padding: 22px 26px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .panel-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--navy-900);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-details h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -0.02em;
+    }
+
+    .step-details p {
+      font-size: 0.86rem;
+      color: var(--slate-500);
+      margin-top: 2px;
+    }
+
+    /* Form Grid */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      padding: 24px 26px;
+      background: #fafcff;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .field label .req {
+      color: #ef4444;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.92rem;
+      background: #ffffff;
+      color: var(--slate-900);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--emerald-600);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+      background: #ffffff;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--slate-400);
+    }
+
+    /* Table Section */
+    .section-notice {
+      margin: 18px 26px 0;
+      padding: 14px 18px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: #166534;
+    }
+
+    .notice-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .table-container {
+      margin-top: 18px;
+      overflow-x: auto;
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      text-align: left;
+    }
+
+    thead {
+      background: #0f1f33;
+      color: #ffffff;
+    }
+
+    th {
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    th.num, td.num {
+      text-align: center;
+    }
+
+    th.right, td.right {
+      text-align: right;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--slate-200);
+      transition: background 0.15s ease;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    tbody tr:hover {
+      background: #eff6ff;
+    }
+
+    tbody tr.has-price {
+      background: #f0fdf4 !important;
+    }
+
+    td {
+      padding: 13px 18px;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+      vertical-align: middle;
+    }
+
+    .model-name {
+      font-weight: 700;
+      color: var(--navy-900);
+      font-size: 0.98rem;
+    }
+
+    .qty-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #e2e8f0;
+      color: var(--navy-900);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .fuel-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .fuel-petrol {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .fuel-diesel {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .fuel-other {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    /* Price Input */
+    .input-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      max-width: 180px;
+    }
+
+    .currency-symbol {
+      position: absolute;
+      left: 12px;
+      color: var(--slate-500);
+      font-weight: 700;
+      font-size: 0.92rem;
+      pointer-events: none;
+    }
+
+    .price-input {
+      width: 100%;
+      padding: 9px 12px 9px 28px;
+      border: 1.5px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--navy-900);
+      outline: none;
+      transition: var(--transition);
+      background: #ffffff;
+    }
+
+    .price-input:focus {
+      border-color: var(--emerald-600);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+
+    .line-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: var(--slate-700);
+      font-size: 0.94rem;
+    }
+
+    .line-total.active {
+      color: var(--emerald-600);
+    }
+
+    /* Table Footer */
+    tfoot {
+      background: #f1f5f9;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    tfoot td {
+      padding: 14px 18px;
+      border-bottom: none;
+      font-size: 0.9rem;
+    }
+
+    /* Grand Total Bar */
+    .summary-bar {
+      padding: 22px 26px;
+      background: linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .summary-metrics {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .metric-pill {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-pill span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .metric-pill strong {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .total-pill {
+      text-align: right;
+    }
+
+    .total-pill span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .total-pill .grand-amount {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: var(--emerald-600);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.1;
+    }
+
+    /* Action Buttons */
+    .actions-bar {
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: #ffffff;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 800;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      color: #ffffff;
+      flex: 2;
+      min-width: 260px;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-whatsapp:hover {
+      filter: brightness(1.06);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-whatsapp:active {
+      transform: translateY(0);
+    }
+
+    .btn-copy {
+      background: #ffffff;
+      color: var(--navy-900);
+      border: 1.5px solid var(--slate-300);
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .btn-copy:hover {
+      background: var(--slate-50);
+      border-color: var(--navy-900);
+    }
+
+    .btn-reset {
+      background: transparent;
+      color: var(--slate-500);
+      border: 1.5px solid var(--slate-200);
+      padding: 14px 18px;
+    }
+
+    .btn-reset:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+
+    /* Submission Hint */
+    .submission-hint {
+      padding: 0 26px 20px;
+      color: var(--slate-500);
+      font-size: 0.84rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .submission-hint strong {
+      color: var(--navy-900);
+    }
+
+    /* Toast Message */
+    .toast-msg {
+      display: none;
+      margin: 16px 26px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .toast-error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .toast-success {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Trust & Features Section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: #f0fdf4;
+      color: var(--emerald-600);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .feature-card strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      font-size: 0.84rem;
+      color: var(--slate-500);
+      line-height: 1.5;
+    }
+
+    /* Mobile Sticky Bar */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 100;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-sticky-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .mobile-total-info {
+      color: #ffffff;
+    }
+
+    .mobile-total-info small {
+      display: block;
+      font-size: 0.7rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .mobile-total-info strong {
+      font-size: 1.25rem;
+      color: var(--emerald-400);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-900);
+      color: #94a3b8;
+      padding: 34px 0;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-info h4 {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .footer-info p {
+      font-size: 0.84rem;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 0.86rem;
+    }
+
+    .footer-contact a {
+      color: var(--emerald-400);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-contact {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 0 16px;
+      }
+      .panel-header {
+        padding: 18px;
+      }
+      .form-grid {
+        padding: 18px;
+      }
+      .summary-bar {
+        padding: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .total-pill {
+        text-align: left;
+      }
+      .actions-bar {
+        padding: 18px;
+      }
+      .action-group {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .mobile-sticky-bar {
+        display: block;
+      }
+      body {
+        padding-bottom: 74px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-
-<main class="wrap">
-  
-  
-  <form id="quoteForm" class="panel">
-    
-    
-    <div class="panel-top" style="border-top:1px solid var(--line)"><h2 style="font-size:1.18rem">2. Enter your prices</h2><p class="sub">Enter your offered price for each vehicle. Leave unavailable items blank.</p></div>
-    <div class="notice">ℹ️ Enter the total amount you offer for <strong>one vehicle</strong> of that model. If your rate depends on inspection, mention it in the notes.</div>
-    <div id="formMessage" class="toast" role="alert"></div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th class="num">#</th><th>Vehicle model</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
-        <tbody id="vehicleRows"><tr><td class="num">1</td><td><strong>Alto</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Alto price per vehicle in rupees" data-index="0" placeholder="₹ per vehicle"></td></tr><tr><td class="num">2</td><td><strong>WagonR</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="WagonR price per vehicle in rupees" data-index="1" placeholder="₹ per vehicle"></td></tr><tr><td class="num">3</td><td><strong>UVA</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="UVA price per vehicle in rupees" data-index="2" placeholder="₹ per vehicle"></td></tr><tr><td class="num">4</td><td><strong>Spark</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Spark price per vehicle in rupees" data-index="3" placeholder="₹ per vehicle"></td></tr><tr><td class="num">5</td><td><strong>Aira</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Aira price per vehicle in rupees" data-index="4" placeholder="₹ per vehicle"></td></tr><tr><td class="num">6</td><td><strong>Eon</strong></td><td class="num qty">2</td><td>Not specified</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Eon price per vehicle in rupees" data-index="5" placeholder="₹ per vehicle"></td></tr><tr><td class="num">7</td><td><strong>Etios</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Etios price per vehicle in rupees" data-index="6" placeholder="₹ per vehicle"></td></tr><tr><td class="num">8</td><td><strong>Zest</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zest price per vehicle in rupees" data-index="7" placeholder="₹ per vehicle"></td></tr><tr><td class="num">9</td><td><strong>M800</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="M800 price per vehicle in rupees" data-index="8" placeholder="₹ per vehicle"></td></tr><tr><td class="num">10</td><td><strong>Zen</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zen price per vehicle in rupees" data-index="9" placeholder="₹ per vehicle"></td></tr><tr><td class="num">11</td><td><strong>Figo</strong></td><td class="num qty">4</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Figo price per vehicle in rupees" data-index="10" placeholder="₹ per vehicle"></td></tr><tr><td class="num">12</td><td><strong>Punto</strong></td><td class="num qty">5</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Punto price per vehicle in rupees" data-index="11" placeholder="₹ per vehicle"></td></tr><tr><td class="num">13</td><td><strong>Santro</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Santro price per vehicle in rupees" data-index="12" placeholder="₹ per vehicle"></td></tr><tr><td class="num">14</td><td><strong>Civic</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Civic price per vehicle in rupees" data-index="13" placeholder="₹ per vehicle"></td></tr><tr><td class="num">15</td><td><strong>SX4</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="SX4 price per vehicle in rupees" data-index="14" placeholder="₹ per vehicle"></td></tr><tr><td class="num">16</td><td><strong>Fiesta</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Fiesta price per vehicle in rupees" data-index="15" placeholder="₹ per vehicle"></td></tr></tbody>
-        <tfoot><tr><td></td><td>Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
-      </table>
+  <!-- Top Navigation -->
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="brand">
+        <div class="brand-icon" aria-hidden="true">♻️</div>
+        <div class="brand-text">
+          <h1>Vehicle Scrapping Kerala</h1>
+          <span>Official Vendor Quotation Portal</span>
+        </div>
+      </a>
+      <div class="nav-badge">
+        <span class="pulse-dot"></span>
+        Direct WhatsApp CTA
+      </div>
     </div>
-    <div class="bottom-total"><div><strong>Estimated quotation total</strong><div class="sub">Calculated from the quantities and prices you enter</div></div><div class="total-value" id="grandTotal">₹ 0</div></div>
-    <div class="actions">
-      <button type="submit" class="btn btn-green">☏ &nbsp; Submit quotation on WhatsApp</button>
-      <button type="reset" class="btn btn-outline" id="resetBtn">Clear all entries</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hero-eyebrow">
+          <span>⚡ Bulk Vehicle Scrap Enquiry</span>
+        </div>
+        <h2 class="hero-title">Submit Your Best <span class="highlight">Purchase Rates</span></h2>
+        <p class="hero-desc">
+          We invite verified auto recyclers and scrap merchants to submit per-vehicle offers for <strong>28 scrap vehicles across 16 popular models</strong> in Kerala. Enter your prices below to generate an instant official WhatsApp quotation.
+        </p>
+        <div class="hero-stats-row">
+          <div class="hero-stat-card">
+            <strong>16</strong>
+            <span>Vehicle Models</span>
+          </div>
+          <div class="hero-stat-card">
+            <strong>28</strong>
+            <span>Total Units</span>
+          </div>
+          <div class="hero-stat-card">
+            <strong>₹ INR</strong>
+            <span>Direct Currency</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-head">
+          <div class="hero-card-icon">📋</div>
+          <div>
+            <div class="hero-card-title">Quick Quotation Guide</div>
+            <div class="hero-card-sub">Simple 3-step transparent submission</div>
+          </div>
+        </div>
+        <ul class="hero-checklist">
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>Enter your business name and contact number</span>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>Quote your rate per vehicle for available models</span>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>Tap submit to review and send directly on WhatsApp</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="hint">Your quotation will be prepared as a WhatsApp message to <strong>+91 98950 60003</strong>. Review the message and tap Send in WhatsApp to submit it.</div>
-  </form>
-  
-</main>
+  </section>
 
-<script>
-const vehicles = [
-  {model:"Alto",qty:2,fuel:"Petrol"},
-  {model:"WagonR",qty:2,fuel:"Petrol"},
-  {model:"UVA",qty:1,fuel:"Petrol"},
-  {model:"Spark",qty:1,fuel:"Petrol"},
-  {model:"Aira",qty:1,fuel:"Diesel"},
-  {model:"Eon",qty:2,fuel:"Not specified"},
-  {model:"Etios",qty:1,fuel:"Diesel"},
-  {model:"Zest",qty:1,fuel:"Diesel"},
-  {model:"M800",qty:2,fuel:"Petrol"},
-  {model:"Zen",qty:1,fuel:"Petrol"},
-  {model:"Figo",qty:4,fuel:"Diesel"},
-  {model:"Punto",qty:5,fuel:"Diesel"},
-  {model:"Santro",qty:2,fuel:"Petrol"},
-  {model:"Civic",qty:1,fuel:"Petrol"},
-  {model:"SX4",qty:1,fuel:"Petrol"},
-  {model:"Fiesta",qty:1,fuel:"Petrol"}
-];
-const rows = document.getElementById("vehicleRows");
-vehicles.forEach((v,i)=>{
-  const tr=document.createElement("tr");
-  tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
-  rows.appendChild(tr);
-});
-const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(n);
-function total(){
-  let sum=0;
-  document.querySelectorAll(".price").forEach(input=>{
-    const p=input.value.trim()===""?0:Number(input.value);
-    if(Number.isFinite(p)&&p>=0) sum += p*vehicles[Number(input.dataset.index)].qty;
-  });
-  document.getElementById("grandTotal").textContent=money(sum);
-}
-document.addEventListener("input",e=>{if(e.target.classList.contains("price"))total()});
-document.getElementById("quoteForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  const vendor=document.getElementById("vendor").value.trim();
-  const phone=document.getElementById("phone").value.trim();
-  const notes=document.getElementById("notes").value.trim();
-  const prices=[...document.querySelectorAll(".price")];
-  const quoted=vehicles.map((v,i)=>({ ...v, price:prices[i].value.trim()})).filter(v=>v.price!=="");
-  const msg=document.getElementById("formMessage");
-  if(!vendor||!phone){msg.textContent="Please fill in your vendor/company name and contact number.";msg.style.display="block";return}
-  if(!quoted.length){msg.textContent="Please enter at least one vehicle price before submitting.";msg.style.display="block";return}
-  if(quoted.some(v=>!Number.isFinite(Number(v.price))||Number(v.price)<0)){msg.textContent="Please check the prices. Enter valid amounts of ₹0 or more.";msg.style.display="block";return}
-  let sum=quoted.reduce((acc,v)=>acc+Number(v.price)*v.qty,0);
-  let textMsg=`VEHICLE SCRAPPING - VENDOR PRICE QUOTATION\n\nVendor: ${vendor}\nContact: ${phone}\n\nPRICE OFFER (per vehicle):\n`;
-  quoted.forEach(v=>{textMsg+=`• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${Number(v.price).toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(Number(v.price)*v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`});
-  textMsg+=`\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total for entered prices: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
-  if(notes)textMsg+=`\nNotes: ${notes}\n`;
-  textMsg+="\nPlease confirm the final price and inspection/pickup conditions.";
-  window.open("https://api.whatsapp.com/send?phone=919895060003&text="+encodeURIComponent(textMsg),"_blank","noopener,noreferrer");
-  msg.style.display="none";
-});
-document.getElementById("quoteForm").addEventListener("reset",()=>setTimeout(()=>{total();document.getElementById("formMessage").style.display="none"},0));
-</script>
+  <!-- Main Quotation Form -->
+  <main class="wrap">
+    <form id="quoteForm" class="panel" novalidate>
 
-</body></html>
+      <!-- Step 1: Vendor Details -->
+      <div class="panel-header">
+        <div class="panel-step">
+          <div class="step-num">1</div>
+          <div class="step-details">
+            <h2>Vendor & Contact Information</h2>
+            <p>Please enter your contact details so we can verify your offer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="vendor">Vendor / Company Name <span class="req">*</span></label>
+          <input id="vendor" name="vendor" type="text" autocomplete="organization" required placeholder="e.g. Royal Auto Scrappers, Kochi">
+        </div>
+        <div class="field">
+          <label for="phone">Contact / WhatsApp Number <span class="req">*</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="e.g. +91 98950 00000">
+        </div>
+        <div class="field">
+          <label for="location">Yard / City Location</label>
+          <input id="location" name="location" type="text" placeholder="e.g. Kochi, Malappuram, Kozhikode">
+        </div>
+        <div class="field full">
+          <label for="notes">Special Terms & Notes (Optional)</label>
+          <textarea id="notes" name="notes" rows="2" placeholder="e.g. Rate subject to physical chassis inspection; immediate spot cash payment; free towing provided."></textarea>
+        </div>
+      </div>
+
+      <!-- Step 2: Price Submission -->
+      <div class="panel-header" style="border-top: 1px solid var(--slate-200);">
+        <div class="panel-step">
+          <div class="step-num">2</div>
+          <div class="step-details">
+            <h2>Vehicle Price Submission Table</h2>
+            <p>Enter your offered price for <strong>one vehicle</strong> of each model. Quantities multiply automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-notice">
+        <span class="notice-icon">💡</span>
+        <div>
+          <strong>Pricing Rule:</strong> Enter the price you will pay for <strong>1 unit</strong>. The line total and grand total are calculated dynamically. Leave rows blank for models you are not bidding on.
+        </div>
+      </div>
+
+      <div id="formMessage" class="toast-msg toast-error" role="alert"></div>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="num" style="width: 50px;">#</th>
+              <th>Vehicle Model</th>
+              <th class="num" style="width: 100px;">Qty</th>
+              <th style="width: 140px;">Fuel Type</th>
+              <th style="width: 200px;">Offer / Vehicle (₹)</th>
+              <th class="right" style="width: 170px;">Line Total (₹)</th>
+            </tr>
+          </thead>
+          <tbody id="vehicleRows">
+            <!-- Populated cleanly via JavaScript -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="num">Σ</td>
+              <td><strong>Total Vehicle Count</strong></td>
+              <td class="num"><span class="qty-tag" id="totalQtyBadge">28</span></td>
+              <td colspan="2">Prices are vendor-offered rates</td>
+              <td class="right" id="tfootTotal">₹ 0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Grand Total Summary Bar -->
+      <div class="summary-bar">
+        <div class="summary-metrics">
+          <div class="metric-pill">
+            <span>Models Quoted</span>
+            <strong id="quotedCount">0 / 16</strong>
+          </div>
+          <div class="metric-pill">
+            <span>Total Units Quoted</span>
+            <strong id="quotedUnits">0 / 28</strong>
+          </div>
+        </div>
+        <div class="total-pill">
+          <span>Estimated Quotation Total</span>
+          <div class="grand-amount" id="grandTotal">₹ 0</div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="actions-bar">
+        <div class="action-group">
+          <button type="submit" class="btn btn-whatsapp" id="submitBtn">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            Submit Quotation on WhatsApp
+          </button>
+          <button type="button" class="btn btn-copy" id="copyBtn">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+            Copy Quotation Text
+          </button>
+          <button type="reset" class="btn btn-reset" id="resetBtn" title="Reset all prices and fields">
+            Clear Form
+          </button>
+        </div>
+      </div>
+
+      <div class="submission-hint">
+        <span>📲 Your quotation is sent directly to <strong>+91 98950 60003</strong>. You will be able to review the full message in WhatsApp before tapping send.</span>
+      </div>
+
+    </form>
+
+    <!-- Trust Badges -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-box">🔒</div>
+        <div>
+          <strong>Direct WhatsApp Submission</strong>
+          <p>Instant review in WhatsApp. No login, sign-up, or third-party storage needed.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-box">💰</div>
+        <div>
+          <strong>Transparent Per-Vehicle Pricing</strong>
+          <p>Quote your rate per vehicle. Totals multiply transparently for clear evaluation.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-box">♻️</div>
+        <div>
+          <strong>Authorized Scrap Processing</strong>
+          <p>All vehicles disposed of in compliance with government green recycling norms.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Mobile Bar -->
+  <div class="mobile-sticky-bar" id="mobileBar">
+    <div class="mobile-sticky-content">
+      <div class="mobile-total-info">
+        <small>Estimated Total</small>
+        <strong id="mobileGrandTotal">₹ 0</strong>
+      </div>
+      <button type="button" class="btn btn-whatsapp" style="flex: inherit; min-width: auto; padding: 10px 18px; font-size: 0.88rem;" onclick="document.getElementById('submitBtn').click()">
+        Submit via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-info">
+        <h4>Vehicle Scrapping · Kerala, India</h4>
+        <p>Commercial bulk vehicle disposal & scrap quotation aggregator.</p>
+      </div>
+      <div class="footer-contact">
+        Questions or physical inspections? Contact on WhatsApp:<br>
+        <a href="https://wa.me/919895060003" target="_blank" rel="noopener noreferrer">+91 98950 60003</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Master vehicle inventory
+    const vehicles = [
+      { model: "Alto", qty: 2, fuel: "Petrol" },
+      { model: "WagonR", qty: 2, fuel: "Petrol" },
+      { model: "UVA", qty: 1, fuel: "Petrol" },
+      { model: "Spark", qty: 1, fuel: "Petrol" },
+      { model: "Aira", qty: 1, fuel: "Diesel" },
+      { model: "Eon", qty: 2, fuel: "Not specified" },
+      { model: "Etios", qty: 1, fuel: "Diesel" },
+      { model: "Zest", qty: 1, fuel: "Diesel" },
+      { model: "M800", qty: 2, fuel: "Petrol" },
+      { model: "Zen", qty: 1, fuel: "Petrol" },
+      { model: "Figo", qty: 4, fuel: "Diesel" },
+      { model: "Punto", qty: 5, fuel: "Diesel" },
+      { model: "Santro", qty: 2, fuel: "Petrol" },
+      { model: "Civic", qty: 1, fuel: "Petrol" },
+      { model: "SX4", qty: 1, fuel: "Petrol" },
+      { model: "Fiesta", qty: 1, fuel: "Petrol" }
+    ];
+
+    const DESTINATION_PHONE = "919895060003";
+    const tbody = document.getElementById("vehicleRows");
+
+    // Helper: format money
+    const formatINR = n => new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0
+    }).format(n);
+
+    // Populate table rows cleanly
+    function renderRows() {
+      tbody.innerHTML = "";
+      vehicles.forEach((v, i) => {
+        const tr = document.createElement("tr");
+        tr.id = `row-${i}`;
+
+        let fuelBadge = `<span class="fuel-tag fuel-other">${v.fuel}</span>`;
+        if (v.fuel === "Petrol") {
+          fuelBadge = `<span class="fuel-tag fuel-petrol">⛽ Petrol</span>`;
+        } else if (v.fuel === "Diesel") {
+          fuelBadge = `<span class="fuel-tag fuel-diesel">🛢️ Diesel</span>`;
+        }
+
+        tr.innerHTML = `
+          <td class="num">${i + 1}</td>
+          <td><span class="model-name">${v.model}</span></td>
+          <td class="num"><span class="qty-tag">${v.qty}</span></td>
+          <td>${fuelBadge}</td>
+          <td>
+            <div class="input-wrapper">
+              <span class="currency-symbol">₹</span>
+              <input 
+                class="price-input price" 
+                type="number" 
+                min="0" 
+                step="100" 
+                inputmode="numeric" 
+                aria-label="${v.model} price per unit" 
+                data-index="${i}" 
+                placeholder="Rate / unit"
+              >
+            </div>
+          </td>
+          <td class="right">
+            <span class="line-total" id="line-total-${i}">₹ 0</span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    renderRows();
+
+    // Calculate totals
+    function recalculate() {
+      let grandTotal = 0;
+      let quotedCount = 0;
+      let quotedUnits = 0;
+
+      document.querySelectorAll(".price").forEach(input => {
+        const idx = Number(input.dataset.index);
+        const v = vehicles[idx];
+        const valStr = input.value.trim();
+        const p = valStr === "" ? 0 : Number(valStr);
+        const tr = document.getElementById(`row-${idx}`);
+        const lineTotalEl = document.getElementById(`line-total-${idx}`);
+
+        if (valStr !== "" && Number.isFinite(p) && p > 0) {
+          const lineTotal = p * v.qty;
+          grandTotal += lineTotal;
+          quotedCount += 1;
+          quotedUnits += v.qty;
+          tr.classList.add("has-price");
+          lineTotalEl.textContent = formatINR(lineTotal);
+          lineTotalEl.classList.add("active");
+        } else {
+          tr.classList.remove("has-price");
+          lineTotalEl.textContent = "₹ 0";
+          lineTotalEl.classList.remove("active");
+        }
+      });
+
+      const formatted = formatINR(grandTotal);
+      document.getElementById("grandTotal").textContent = formatted;
+      document.getElementById("tfootTotal").textContent = formatted;
+      document.getElementById("mobileGrandTotal").textContent = formatted;
+      document.getElementById("quotedCount").textContent = `${quotedCount} / ${vehicles.length}`;
+      document.getElementById("quotedUnits").textContent = `${quotedUnits} / 28`;
+    }
+
+    // Input listener
+    document.addEventListener("input", e => {
+      if (e.target.classList.contains("price")) {
+        recalculate();
+      }
+    });
+
+    // Helper: show toast message
+    function showToast(msg, isSuccess = false) {
+      const toast = document.getElementById("formMessage");
+      toast.textContent = msg;
+      toast.className = `toast-msg ${isSuccess ? 'toast-success' : 'toast-error'}`;
+      toast.style.display = "block";
+      toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Compose quotation message
+    function buildQuotationData() {
+      const vendor = document.getElementById("vendor").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const location = document.getElementById("location").value.trim();
+      const notes = document.getElementById("notes").value.trim();
+
+      const prices = [...document.querySelectorAll(".price")];
+      const quoted = vehicles
+        .map((v, i) => ({ ...v, price: prices[i].value.trim() }))
+        .filter(v => v.price !== "" && Number(v.price) > 0);
+
+      if (!vendor) {
+        showToast("⚠️ Please enter your Vendor / Company name in Step 1.");
+        document.getElementById("vendor").focus();
+        return null;
+      }
+      if (!phone) {
+        showToast("⚠️ Please enter your Contact / WhatsApp number in Step 1.");
+        document.getElementById("phone").focus();
+        return null;
+      }
+      if (quoted.length === 0) {
+        showToast("⚠️ Please enter a price for at least one vehicle in Step 2.");
+        return null;
+      }
+
+      let grandSum = quoted.reduce((sum, item) => sum + Number(item.price) * item.qty, 0);
+      let totalUnits = quoted.reduce((sum, item) => sum + item.qty, 0);
+
+      let text = `*🚗 VEHICLE SCRAPPING - VENDOR QUOTATION*\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `*Vendor:* ${vendor}\n`;
+      text += `*Contact:* ${phone}\n`;
+      if (location) text += `*Location:* ${location}\n`;
+      text += `*Date:* ${new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
+      text += `*OFFERED RATES (PER VEHICLE):*\n`;
+
+      quoted.forEach((v, idx) => {
+        const lineTotal = Number(v.price) * v.qty;
+        text += `${idx + 1}. *${v.model}* (${v.fuel})\n`;
+        text += `   Qty: ${v.qty} unit${v.qty > 1 ? 's' : ''} × ₹${Number(v.price).toLocaleString("en-IN")}\n`;
+        text += `   ↳ Subtotal: *₹${lineTotal.toLocaleString("en-IN")}*\n`;
+      });
+
+      text += `\n━━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `*Models Quoted:* ${quoted.length} of ${vehicles.length}\n`;
+      text += `*Total Units Quoted:* ${totalUnits} of 28 vehicles\n`;
+      text += `*ESTIMATED QUOTATION TOTAL:* *₹${grandSum.toLocaleString("en-IN")}*\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+
+      if (notes) {
+        text += `\n*Vendor Notes:*\n${notes}\n`;
+      }
+      text += `\n_Submitted via Vehicle Scrapping Quotation Portal._`;
+
+      return { text, grandSum, quotedCount: quoted.length };
+    }
+
+    // Submit handler (WhatsApp)
+    document.getElementById("quoteForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const data = buildQuotationData();
+      if (!data) return;
+
+      document.getElementById("formMessage").style.display = "none";
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${DESTINATION_PHONE}&text=${encodeURIComponent(data.text)}`;
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+
+    // Copy to clipboard handler
+    document.getElementById("copyBtn").addEventListener("click", () => {
+      const data = buildQuotationData();
+      if (!data) return;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(data.text).then(() => {
+          showToast("✅ Quotation text copied to clipboard! You can paste it into WhatsApp or email.", true);
+        }).catch(() => {
+          showToast("⚠️ Could not copy automatically. You can still submit via WhatsApp.");
+        });
+      } else {
+        showToast("✅ Quotation generated! Use the WhatsApp button to submit.", true);
+      }
+    });
+
+    // Reset handler
+    document.getElementById("quoteForm").addEventListener("reset", () => {
+      setTimeout(() => {
+        recalculate();
+        const toast = document.getElementById("formMessage");
+        toast.style.display = "none";
+      }, 10);
+    });
+  </script>
+</body>
+</html>
