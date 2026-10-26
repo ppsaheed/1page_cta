@@ -143,42 +143,70 @@ const vehicles = [
   {model:"Fiesta",qty:1,fuel:"Petrol"}
 ];
 const rows = document.getElementById("vehicleRows");
-vehicles.forEach((v,i)=>{
-  const tr=document.createElement("tr");
-  tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
-  rows.appendChild(tr);
-});
+if (rows) {
+  rows.innerHTML = "";
+  vehicles.forEach((v,i)=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
+    rows.appendChild(tr);
+  });
+}
 const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(n);
 function total(){
   let sum=0;
   document.querySelectorAll(".price").forEach(input=>{
     const p=input.value.trim()===""?0:Number(input.value);
-    if(Number.isFinite(p)&&p>=0) sum += p*vehicles[Number(input.dataset.index)].qty;
+    const idx = Number(input.dataset.index);
+    if(Number.isFinite(p)&&p>=0&&vehicles[idx]) sum += p*vehicles[idx].qty;
   });
   document.getElementById("grandTotal").textContent=money(sum);
 }
 document.addEventListener("input",e=>{if(e.target.classList.contains("price"))total()});
 document.getElementById("quoteForm").addEventListener("submit",e=>{
   e.preventDefault();
-  const vendor=document.getElementById("vendor").value.trim();
-  const phone=document.getElementById("phone").value.trim();
-  const notes=document.getElementById("notes").value.trim();
-  const prices=[...document.querySelectorAll(".price")];
-  const quoted=vehicles.map((v,i)=>({ ...v, price:prices[i].value.trim()})).filter(v=>v.price!=="");
-  const msg=document.getElementById("formMessage");
-  if(!vendor||!phone){msg.textContent="Please fill in your vendor/company name and contact number.";msg.style.display="block";return}
-  if(!quoted.length){msg.textContent="Please enter at least one vehicle price before submitting.";msg.style.display="block";return}
-  if(quoted.some(v=>!Number.isFinite(Number(v.price))||Number(v.price)<0)){msg.textContent="Please check the prices. Enter valid amounts of ₹0 or more.";msg.style.display="block";return}
-  let sum=quoted.reduce((acc,v)=>acc+Number(v.price)*v.qty,0);
-  let textMsg=`VEHICLE SCRAPPING - VENDOR PRICE QUOTATION\n\nVendor: ${vendor}\nContact: ${phone}\n\nPRICE OFFER (per vehicle):\n`;
-  quoted.forEach(v=>{textMsg+=`• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${Number(v.price).toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(Number(v.price)*v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`});
-  textMsg+=`\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total for entered prices: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
-  if(notes)textMsg+=`\nNotes: ${notes}\n`;
-  textMsg+="\nPlease confirm the final price and inspection/pickup conditions.";
-  window.open("https://api.whatsapp.com/send?phone=919895060003&text="+encodeURIComponent(textMsg),"_blank","noopener,noreferrer");
-  msg.style.display="none";
+  const vendorEl = document.getElementById("vendor");
+  const phoneEl = document.getElementById("phone");
+  const notesEl = document.getElementById("notes");
+  const vendor = vendorEl ? vendorEl.value.trim() : "";
+  const phone = phoneEl ? phoneEl.value.trim() : "";
+  const notes = notesEl ? notesEl.value.trim() : "";
+
+  const prices = [...document.querySelectorAll(".price")];
+  const quoted = [];
+  prices.forEach(input => {
+    const val = input.value.trim();
+    const idx = Number(input.dataset.index);
+    if (val !== "" && Number.isFinite(Number(val)) && Number(val) >= 0 && vehicles[idx]) {
+      quoted.push({ ...vehicles[idx], price: Number(val) });
+    }
+  });
+
+  const msg = document.getElementById("formMessage");
+  if (!quoted.length) {
+    if (msg) {
+      msg.textContent = "Please enter at least one vehicle price before submitting.";
+      msg.style.display = "block";
+    }
+    return;
+  }
+
+  let sum = quoted.reduce((acc, v) => acc + v.price * v.qty, 0);
+  let textMsg = `VEHICLE SCRAPPING - VENDOR PRICE QUOTATION\n\n`;
+  if (vendor) textMsg += `Vendor: ${vendor}\n`;
+  if (phone) textMsg += `Contact: ${phone}\n`;
+  textMsg += `PRICE OFFER (per vehicle):\n`;
+  quoted.forEach(v => {
+    textMsg += `• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${v.price.toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(v.price * v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
+  });
+  textMsg += `\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
+  if (notes) textMsg += `\nNotes: ${notes}\n`;
+  textMsg += "\nPlease confirm the final price and inspection/pickup conditions.";
+
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=919895060003&text=" + encodeURIComponent(textMsg);
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  if (msg) msg.style.display = "none";
 });
-document.getElementById("quoteForm").addEventListener("reset",()=>setTimeout(()=>{total();document.getElementById("formMessage").style.display="none"},0));
+document.getElementById("quoteForm").addEventListener("reset",()=>setTimeout(()=>{total();const msg=document.getElementById("formMessage");if(msg)msg.style.display="none"},0));
 </script>
 
 </body></html>
