@@ -102,6 +102,13 @@ footer small{color:#c6d4e4}
   
   <form id="quoteForm" class="panel">
     
+    <div class="panel-top"><h2 style="font-size:1.18rem">1. Contact details</h2><p class="sub">Enter your phone / WhatsApp number so we can process your quotation.</p></div>
+    <div class="form-grid">
+      <div class="field full">
+        <label for="phone">Phone / WhatsApp Number *</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="e.g. +91 98950 00000 or 9895012345">
+      </div>
+    </div>
     
     <div class="panel-top" style="border-top:1px solid var(--line)"><h2 style="font-size:1.18rem">2. Enter your prices</h2><p class="sub">Enter your offered price for each vehicle. Leave unavailable items blank.</p></div>
     <div class="notice">ℹ️ Enter the total amount you offer for <strong>one vehicle</strong> of that model. If your rate depends on inspection, mention it in the notes.</div>
@@ -164,12 +171,18 @@ function total(){
 document.addEventListener("input",e=>{if(e.target.classList.contains("price"))total()});
 document.getElementById("quoteForm").addEventListener("submit",e=>{
   e.preventDefault();
-  const vendorEl = document.getElementById("vendor");
   const phoneEl = document.getElementById("phone");
-  const notesEl = document.getElementById("notes");
-  const vendor = vendorEl ? vendorEl.value.trim() : "";
   const phone = phoneEl ? phoneEl.value.trim() : "";
-  const notes = notesEl ? notesEl.value.trim() : "";
+  const msg = document.getElementById("formMessage");
+
+  if (!phone) {
+    if (msg) {
+      msg.textContent = "Please enter your Phone / WhatsApp number before submitting.";
+      msg.style.display = "block";
+    }
+    if (phoneEl) phoneEl.focus();
+    return;
+  }
 
   const prices = [...document.querySelectorAll(".price")];
   const quoted = [];
@@ -181,7 +194,6 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
     }
   });
 
-  const msg = document.getElementById("formMessage");
   if (!quoted.length) {
     if (msg) {
       msg.textContent = "Please enter at least one vehicle price before submitting.";
@@ -192,16 +204,45 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
 
   let sum = quoted.reduce((acc, v) => acc + v.price * v.qty, 0);
   let textMsg = `VEHICLE SCRAPPING - VENDOR PRICE QUOTATION\n\n`;
-  if (vendor) textMsg += `Vendor: ${vendor}\n`;
-  if (phone) textMsg += `Contact: ${phone}\n`;
+  textMsg += `Contact Phone: ${phone}\n\n`;
   textMsg += `PRICE OFFER (per vehicle):\n`;
   quoted.forEach(v => {
     textMsg += `• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${v.price.toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(v.price * v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
   });
   textMsg += `\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
-  if (notes) textMsg += `\nNotes: ${notes}\n`;
   textMsg += "\nPlease confirm the final price and inspection/pickup conditions.";
 
+  // Save quotation to Supabase Database
+  const SUPABASE_URL = "https://rgsrzkgmwluccbihpbug.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnc3J6a2dtd2x1Y2NiaWhwYnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5ODk1NTQsImV4cCI6MjEwODU2NTU1NH0.64fne0J6VcEFo5KyKq4ActSup1Am3aBHxm13l_FR398";
+  
+  const record = {
+    phone: phone,
+    quoted_models_count: quoted.length,
+    total_vehicles_quoted: quoted.reduce((acc, v) => acc + v.qty, 0),
+    grand_total: sum,
+    vehicles_data: quoted.map(v => ({
+      model: v.model,
+      fuel: v.fuel,
+      qty: v.qty,
+      price: v.price,
+      line_total: v.price * v.qty
+    })),
+    raw_message: textMsg
+  };
+
+  fetch(SUPABASE_URL + "/rest/v1/quotations", {
+    method: "POST",
+    headers: {
+      "apikey": SUPABASE_KEY,
+      "Authorization": "Bearer " + SUPABASE_KEY,
+      "Content-Type": "application/json",
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify(record)
+  }).catch(err => console.error("Supabase save error:", err));
+
+  // Open WhatsApp CTA
   const whatsappUrl = "https://api.whatsapp.com/send?phone=919895060003&text=" + encodeURIComponent(textMsg);
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   if (msg) msg.style.display = "none";
