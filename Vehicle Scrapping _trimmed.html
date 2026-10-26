@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)file:///home/spareezy/DEV/1page_cta/vehicle_scrapping_vendor_price_submission.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d2b52">
+<title>Vehicle Scrapping | Vendor Price Submission</title>
+<style>
+:root{--navy:#102b50;--green:#07883c;--green2:#0aa34b;--ink:#18263d;--muted:#64748b;--line:#dce5ee;--pale:#f2f7fb;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f4f7fa;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}
+header{background:#fff;border-bottom:1px solid #e7edf3}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:1.05rem}
+.logo{width:45px;height:45px;border-radius:14px;background:#e2f6e9;color:var(--green);display:grid;place-items:center;font-size:25px}
+.brand small{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.16em;font-weight:700}
+.pill{border-radius:999px;padding:8px 12px;background:#eaf8ef;color:#08763a;font-size:.8rem;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(120deg,#fff 0%,#f5fbff 62%,#e7f7ec 100%);overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding-top:46px;padding-bottom:42px}
+.eyebrow{color:var(--green);font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.04;letter-spacing:-.045em;color:var(--navy);margin:12px 0 16px}
+h1 span{color:var(--green)}
+.hero p{font-size:1.08rem;color:#475569;max-width:600px;margin:0 0 22px}
+.hero-art{min-height:225px;border-radius:26px;background:linear-gradient(145deg,#dcefe5,#f4f8fc);display:grid;place-items:center;position:relative;overflow:hidden}
+.car-stack{font-size:clamp(5rem,12vw,8.5rem);filter:drop-shadow(0 12px 9px #0e2a5020);line-height:1}
+.art-caption{position:absolute;bottom:17px;left:18px;right:18px;text-align:center;color:var(--navy);font-size:.85rem;font-weight:750}
+.btn{border:0;border-radius:14px;padding:14px 18px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 8px 18px #07883c22}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-outline{border:1px solid var(--line);background:#fff;color:var(--navy)}
+main{padding:28px 0 44px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px}
+h2{margin:0;color:var(--navy);font-size:1.55rem;letter-spacing:-.025em}
+.sub{color:var(--muted);font-size:.92rem;margin:5px 0 0}
+.summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:130px;flex:1}
+.stat strong{display:block;color:var(--navy);font-size:1.3rem}
+.stat span{color:var(--muted);font-size:.78rem}
+.panel{background:#fff;border:1px solid #e4ebf2;border-radius:20px;box-shadow:0 8px 28px #102b5009;overflow:hidden}
+.panel-top{padding:20px 20px 12px}
+.notice{margin:0 20px 16px;background:#eef6ff;border-radius:12px;padding:12px 14px;color:#24446d;font-size:.88rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px}
+.field label{display:block;font-size:.84rem;font-weight:750;color:#334155;margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;font:inherit;background:#fff;color:var(--ink);outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #07883c18}
+.field.full{grid-column:1/-1}
+.table-wrap{overflow-x:auto;border-top:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:650px}
+thead{background:var(--navy);color:#fff}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #e6edf3}
+th{font-size:.81rem;letter-spacing:.02em}
+td{font-size:.91rem}
+tbody tr:nth-child(even){background:#f7f9fb}
+td.num,th.num{text-align:center}
+.qty{font-weight:800;color:var(--navy)}
+.price-input{width:100%;max-width:155px;padding:10px 11px;border:1px solid #cbd5e1;border-radius:9px;font:inherit}
+.price-input:focus{outline:2px solid #07883c55;border-color:var(--green)}
+tfoot{background:#e5f6e9;font-weight:800;color:var(--navy)}
+tfoot td{border-bottom:0}
+.bottom-total{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;background:#f8fafc;border-top:1px solid var(--line)}
+.total-value{font-size:1.3rem;color:var(--green);font-weight:850}
+.actions{display:flex;flex-wrap:wrap;gap:10px;padding:0 20px 20px}
+.hint{padding:0 20px 18px;color:var(--muted);font-size:.82rem}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.feature{padding:17px;background:#fff;border:1px solid var(--line);border-radius:15px;display:flex;gap:12px;align-items:flex-start}
+.feature .ico{font-size:1.5rem}
+.feature strong{display:block;color:var(--navy);font-size:.91rem}
+.feature span{font-size:.8rem;color:var(--muted)}
+footer{background:var(--navy);color:#eaf2fb;padding:24px 0}
+.foot{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+footer small{color:#c6d4e4}
+.toast{display:none;margin:0 20px 16px;padding:12px 14px;border-radius:10px;background:#fff4df;color:#804b00;font-size:.88rem}
+@media(max-width:760px){
+ .wrap{padding:0 13px}.nav{min-height:66px}.pill{font-size:.72rem;padding:7px 9px}
+ .hero-inner{grid-template-columns:1fr;padding-top:32px;padding-bottom:28px;gap:20px}
+ .hero-art{min-height:160px}.car-stack{font-size:5rem}h1{font-size:2.55rem}
+ main{padding-top:23px}.section-head{align-items:flex-start;flex-direction:column}
+ .form-grid{grid-template-columns:1fr;padding-left:14px;padding-right:14px}
+ .field.full{grid-column:auto}.panel-top{padding:17px 14px 10px}
+ .notice{margin-left:14px;margin-right:14px}.actions{padding-left:14px;padding-right:14px}
+ .bottom-total{padding:14px;align-items:flex-start;flex-direction:column}
+ .hint{padding-left:14px;padding-right:14px}.features{grid-template-columns:1fr}
+ .feature{padding:14px}.btn{width:100%}.actions{display:grid}
+}
+</style>
+</head>
+<body>
+
+
+<main class="wrap">
+  
+  
+  <form id="quoteForm" class="panel">
+    
+    
+    <div class="panel-top" style="border-top:1px solid var(--line)"><h2 style="font-size:1.18rem">2. Enter your prices</h2><p class="sub">Enter your offered price for each vehicle. Leave unavailable items blank.</p></div>
+    <div class="notice">ℹ️ Enter the total amount you offer for <strong>one vehicle</strong> of that model. If your rate depends on inspection, mention it in the notes.</div>
+    <div id="formMessage" class="toast" role="alert"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Vehicle model</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
+        <tbody id="vehicleRows"><tr><td class="num">1</td><td><strong>Alto</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Alto price per vehicle in rupees" data-index="0" placeholder="₹ per vehicle"></td></tr><tr><td class="num">2</td><td><strong>WagonR</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="WagonR price per vehicle in rupees" data-index="1" placeholder="₹ per vehicle"></td></tr><tr><td class="num">3</td><td><strong>UVA</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="UVA price per vehicle in rupees" data-index="2" placeholder="₹ per vehicle"></td></tr><tr><td class="num">4</td><td><strong>Spark</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Spark price per vehicle in rupees" data-index="3" placeholder="₹ per vehicle"></td></tr><tr><td class="num">5</td><td><strong>Aira</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Aira price per vehicle in rupees" data-index="4" placeholder="₹ per vehicle"></td></tr><tr><td class="num">6</td><td><strong>Eon</strong></td><td class="num qty">2</td><td>Not specified</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Eon price per vehicle in rupees" data-index="5" placeholder="₹ per vehicle"></td></tr><tr><td class="num">7</td><td><strong>Etios</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Etios price per vehicle in rupees" data-index="6" placeholder="₹ per vehicle"></td></tr><tr><td class="num">8</td><td><strong>Zest</strong></td><td class="num qty">1</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zest price per vehicle in rupees" data-index="7" placeholder="₹ per vehicle"></td></tr><tr><td class="num">9</td><td><strong>M800</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="M800 price per vehicle in rupees" data-index="8" placeholder="₹ per vehicle"></td></tr><tr><td class="num">10</td><td><strong>Zen</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Zen price per vehicle in rupees" data-index="9" placeholder="₹ per vehicle"></td></tr><tr><td class="num">11</td><td><strong>Figo</strong></td><td class="num qty">4</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Figo price per vehicle in rupees" data-index="10" placeholder="₹ per vehicle"></td></tr><tr><td class="num">12</td><td><strong>Punto</strong></td><td class="num qty">5</td><td>Diesel</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Punto price per vehicle in rupees" data-index="11" placeholder="₹ per vehicle"></td></tr><tr><td class="num">13</td><td><strong>Santro</strong></td><td class="num qty">2</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Santro price per vehicle in rupees" data-index="12" placeholder="₹ per vehicle"></td></tr><tr><td class="num">14</td><td><strong>Civic</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Civic price per vehicle in rupees" data-index="13" placeholder="₹ per vehicle"></td></tr><tr><td class="num">15</td><td><strong>SX4</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="SX4 price per vehicle in rupees" data-index="14" placeholder="₹ per vehicle"></td></tr><tr><td class="num">16</td><td><strong>Fiesta</strong></td><td class="num qty">1</td><td>Petrol</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Fiesta price per vehicle in rupees" data-index="15" placeholder="₹ per vehicle"></td></tr></tbody>
+        <tfoot><tr><td></td><td>Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="bottom-total"><div><strong>Estimated quotation total</strong><div class="sub">Calculated from the quantities and prices you enter</div></div><div class="total-value" id="grandTotal">₹ 0</div></div>
+    <div class="actions">
+      <button type="submit" class="btn btn-green">☏ &nbsp; Submit quotation on WhatsApp</button>
+      <button type="reset" class="btn btn-outline" id="resetBtn">Clear all entries</button>
+    </div>
+    <div class="hint">Your quotation will be prepared as a WhatsApp message to <strong>+91 98950 60003</strong>. Review the message and tap Send in WhatsApp to submit it.</div>
+  </form>
+  
+</main>
+
+<script>
+const vehicles = [
+  {model:"Alto",qty:2,fuel:"Petrol"},
+  {model:"WagonR",qty:2,fuel:"Petrol"},
+  {model:"UVA",qty:1,fuel:"Petrol"},
+  {model:"Spark",qty:1,fuel:"Petrol"},
+  {model:"Aira",qty:1,fuel:"Diesel"},
+  {model:"Eon",qty:2,fuel:"Not specified"},
+  {model:"Etios",qty:1,fuel:"Diesel"},
+  {model:"Zest",qty:1,fuel:"Diesel"},
+  {model:"M800",qty:2,fuel:"Petrol"},
+  {model:"Zen",qty:1,fuel:"Petrol"},
+  {model:"Figo",qty:4,fuel:"Diesel"},
+  {model:"Punto",qty:5,fuel:"Diesel"},
+  {model:"Santro",qty:2,fuel:"Petrol"},
+  {model:"Civic",qty:1,fuel:"Petrol"},
+  {model:"SX4",qty:1,fuel:"Petrol"},
+  {model:"Fiesta",qty:1,fuel:"Petrol"}
+];
+const rows = document.getElementById("vehicleRows");
+vehicles.forEach((v,i)=>{
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
+  rows.appendChild(tr);
+});
+const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(n);
+function total(){
+  let sum=0;
+  document.querySelectorAll(".price").forEach(input=>{
+    const p=input.value.trim()===""?0:Number(input.value);
+    if(Number.isFinite(p)&&p>=0) sum += p*vehicles[Number(input.dataset.index)].qty;
+  });
+  document.getElementById("grandTotal").textContent=money(sum);
+}
+document.addEventListener("input",e=>{if(e.target.classList.contains("price"))total()});
+document.getElementById("quoteForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const vendor=document.getElementById("vendor").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const notes=document.getElementById("notes").value.trim();
+  const prices=[...document.querySelectorAll(".price")];
+  const quoted=vehicles.map((v,i)=>({ ...v, price:prices[i].value.trim()})).filter(v=>v.price!=="");
+  const msg=document.getElementById("formMessage");
+  if(!vendor||!phone){msg.textContent="Please fill in your vendor/company name and contact number.";msg.style.display="block";return}
+  if(!quoted.length){msg.textContent="Please enter at least one vehicle price before submitting.";msg.style.display="block";return}
+  if(quoted.some(v=>!Number.isFinite(Number(v.price))||Number(v.price)<0)){msg.textContent="Please check the prices. Enter valid amounts of ₹0 or more.";msg.style.display="block";return}
+  let sum=quoted.reduce((acc,v)=>acc+Number(v.price)*v.qty,0);
+  let textMsg=`VEHICLE SCRAPPING - VENDOR PRICE QUOTATION\n\nVendor: ${vendor}\nContact: ${phone}\n\nPRICE OFFER (per vehicle):\n`;
+  quoted.forEach(v=>{textMsg+=`• ${v.model} | ${v.fuel} | Qty ${v.qty} | ₹${Number(v.price).toLocaleString("en-IN",{maximumFractionDigits:2})} each | Line total ₹${(Number(v.price)*v.qty).toLocaleString("en-IN",{maximumFractionDigits:2})}\n`});
+  textMsg+=`\nQuoted models: ${quoted.length} of ${vehicles.length}\nQuotation total for entered prices: ₹${sum.toLocaleString("en-IN",{maximumFractionDigits:2})}\n`;
+  if(notes)textMsg+=`\nNotes: ${notes}\n`;
+  textMsg+="\nPlease confirm the final price and inspection/pickup conditions.";
+  window.open("https://api.whatsapp.com/send?phone=919895060003&text="+encodeURIComponent(textMsg),"_blank","noopener,noreferrer");
+  msg.style.display="none";
+});
+document.getElementById("quoteForm").addEventListener("reset",()=>setTimeout(()=>{total();document.getElementById("formMessage").style.display="none"},0));
+</script>
+
+</body></html>
