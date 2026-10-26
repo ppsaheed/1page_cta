@@ -61,6 +61,44 @@ td.num,th.num{text-align:center}
 .price-input:focus{outline:2px solid #07883c55;border-color:var(--green)}
 .spare-tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.78rem;font-weight:600;background:#edf2f7;color:#334155;border:1px solid #dbe2ea;white-space:nowrap}
 .spare-tag.centre{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.view-switch{display:inline-flex;background:#eef3f8;border-radius:10px;padding:3px;gap:3px}
+.view-tab{border:0;background:transparent;padding:6px 13px;border-radius:8px;font:inherit;font-size:.8rem;font-weight:750;color:var(--muted);cursor:pointer;transition:all .15s}
+.view-tab.active{background:#fff;color:var(--navy);box-shadow:0 2px 6px rgba(16,43,80,.1)}
+.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:16px 20px 22px}
+.tile-card{background:#fff;border:1.5px solid #e4ebf2;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(16,43,80,.05);display:flex;flex-direction:column;transition:transform .15s,border-color .15s,box-shadow .15s}
+.tile-card:hover{border-color:#cbdbe9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,43,80,.08)}
+.tile-card.has-price{border-color:var(--green);background:#fbfffc}
+.tile-img-wrap{position:relative;width:100%;height:185px;background:#edf2f7;overflow:hidden;cursor:pointer}
+.tile-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.tile-img-wrap:hover .tile-img{transform:scale(1.04)}
+.tile-num-badge{position:absolute;top:10px;left:10px;background:rgba(16,43,80,.85);color:#fff;padding:3px 8px;border-radius:7px;font-size:.76rem;font-weight:800;backdrop-filter:blur(4px)}
+.tile-qty-badge{position:absolute;top:10px;right:10px;background:var(--green);color:#fff;padding:3px 9px;border-radius:999px;font-size:.76rem;font-weight:800;box-shadow:0 2px 6px rgba(7,136,60,.3)}
+.tile-zoom-hint{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.65);color:#fff;font-size:.7rem;padding:3px 8px;border-radius:6px;backdrop-filter:blur(4px);pointer-events:none}
+.tile-content{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.tile-header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px}
+.tile-title{font-size:1.15rem;font-weight:800;color:var(--navy)}
+.tile-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tile-fuel{font-size:.75rem;padding:2px 7px;border-radius:6px;background:#f1f5f9;color:#475569;font-weight:600}
+.tile-price-box{margin-top:auto;padding-top:10px;border-top:1px dashed #e2e8f0}
+.tile-price-label{display:flex;justify-content:space-between;font-size:.78rem;font-weight:700;color:#475569;margin-bottom:6px}
+.tile-input-wrapper{position:relative;display:flex;align-items:center}
+.tile-currency{position:absolute;left:12px;font-weight:700;color:var(--muted);font-size:.92rem;pointer-events:none}
+.tile-price-input{width:100%;padding:10px 12px 10px 28px;border:1.5px solid #cbd5e1;border-radius:10px;font:inherit;font-size:.95rem;font-weight:700;color:var(--ink);outline:none;background:#fff;transition:all .15s}
+.tile-price-input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(7,136,60,.16)}
+.tile-line-total{margin-top:6px;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;font-weight:600}
+.tile-line-total strong{color:var(--green);font-weight:800}
+.table-thumb{width:42px;height:42px;border-radius:7px;object-fit:cover;cursor:pointer;border:1px solid #dce4ec;vertical-align:middle;transition:transform .15s}
+.table-thumb:hover{transform:scale(1.1)}
+.lightbox-modal{display:none;position:fixed;inset:0;background:rgba(10,22,38,.88);z-index:9999;padding:16px;place-items:center;backdrop-filter:blur(6px)}
+.lightbox-modal.active{display:grid}
+.lightbox-inner{max-width:850px;width:100%;max-height:90vh;display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.5);animation:zoomIn .2s ease}
+@keyframes zoomIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+.lightbox-head{padding:14px 18px;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center}
+.lightbox-title{font-size:1rem;font-weight:800}
+.lightbox-close{background:rgba(255,255,255,.18);border:0;color:#fff;width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;display:grid;place-items:center}
+.lightbox-close:hover{background:rgba(255,255,255,.3)}
+.lightbox-body{padding:10px;background:#060d17;display:grid;place-items:center;overflow:hidden;max-height:75vh}
+.lightbox-body img{max-width:100%;max-height:70vh;object-fit:contain;border-radius:6px}
 tfoot{background:#e5f6e9;font-weight:800;color:var(--navy)}
 tfoot td{border-bottom:0}
 .bottom-total{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;background:#f8fafc;border-top:1px solid var(--line)}
@@ -88,6 +126,8 @@ footer small{color:#c6d4e4}
  .bottom-total{padding:14px;align-items:flex-start;flex-direction:column}
  .hint{padding-left:12px;padding-right:12px}.features{grid-template-columns:1fr}
  .feature{padding:14px}.btn{width:100%}.actions{display:grid}
+ .tiles-grid{grid-template-columns:1fr;padding:12px 10px;gap:12px}
+ .tile-img-wrap{height:180px}
  .table-wrap{overflow-x:hidden;width:100%}
  table{width:100%;min-width:0}
  th,td{padding:8px 3px;font-size:0.76rem}
@@ -113,16 +153,31 @@ footer small{color:#c6d4e4}
       </div>
     </div>
     
-    <div class="panel-top" style="border-top:1px solid var(--line)"><h2 style="font-size:1.18rem">2. Enter your prices</h2><p class="sub">Enter your offered price for each vehicle. Leave unavailable items blank.</p></div>
-    <div class="notice">ℹ️ Enter the total amount you offer for <strong>one vehicle</strong> of that model. If your rate depends on inspection, mention it in the notes.</div>
+    <div class="panel-top" style="border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div>
+        <h2 style="font-size:1.18rem">2. Enter your prices</h2>
+        <p class="sub">Enter your offered price for each vehicle. Leave unavailable items blank.</p>
+      </div>
+      <div class="view-switch" role="tablist" aria-label="Layout view">
+        <button type="button" class="view-tab active" id="tabTiles" onclick="switchView('tiles')">⊞ Tile view</button>
+        <button type="button" class="view-tab" id="tabTable" onclick="switchView('table')">☰ Table view</button>
+      </div>
+    </div>
+    <div class="notice">ℹ️ Enter the total amount you offer for <strong>one vehicle</strong> of that model. Tap any photo to zoom in.</div>
     <div id="formMessage" class="toast" role="alert"></div>
-    <div class="table-wrap">
+
+    <!-- Mobile-friendly Tile View (Default) -->
+    <div class="tiles-grid" id="tilesContainer"></div>
+
+    <!-- Table View -->
+    <div class="table-wrap" id="tableContainer" style="display:none">
       <table>
-        <thead><tr><th class="num">#</th><th>Vehicle model</th><th>Spare part</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
+        <thead><tr><th class="num">#</th><th style="width:52px">Photo</th><th>Vehicle model</th><th>Spare part</th><th class="num">Qty</th><th>Fuel type</th><th>Your price / vehicle (₹)</th></tr></thead>
         <tbody id="vehicleRows"></tbody>
-        <tfoot><tr><td></td><td colspan="2">Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
+        <tfoot><tr><td></td><td colspan="3">Total quantity</td><td class="num" id="totalQty">28</td><td colspan="2">Prices are vendor-submitted</td></tr></tfoot>
       </table>
     </div>
+
     <div class="bottom-total"><div><strong>Estimated quotation total</strong><div class="sub">Calculated from the quantities and prices you enter</div></div><div class="total-value" id="grandTotal">₹ 0</div></div>
     <div class="actions">
       <button type="submit" class="btn btn-green">☏ &nbsp; Submit quotation on WhatsApp</button>
@@ -133,47 +188,180 @@ footer small{color:#c6d4e4}
   
 </main>
 
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal" onclick="if(event.target===this)closeLightbox()">
+  <div class="lightbox-inner">
+    <div class="lightbox-head">
+      <div class="lightbox-title" id="lightboxTitle">Vehicle Photo</div>
+      <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo">✕</button>
+    </div>
+    <div class="lightbox-body">
+      <img id="lightboxImg" src="" alt="Vehicle photo preview">
+    </div>
+  </div>
+</div>
+
 <script>
 const vehicles = [
-  {model:"Alto",part:"Engine piece",qty:2,fuel:"Petrol"},
-  {model:"WagonR",part:"Engine piece",qty:2,fuel:"Petrol"},
-  {model:"UVA",part:"Engine piece",qty:1,fuel:"Petrol"},
-  {model:"Spark",part:"Engine piece",qty:1,fuel:"Petrol"},
-  {model:"Aria",part:"Centre piece",qty:1,fuel:"Diesel"},
-  {model:"Eon",part:"Engine piece",qty:2,fuel:"Not specified"},
-  {model:"Etios",part:"Engine piece",qty:1,fuel:"Diesel"},
-  {model:"Zest",part:"Centre piece",qty:1,fuel:"Diesel"},
-  {model:"M800",part:"Centre piece",qty:2,fuel:"Petrol"},
-  {model:"Zen",part:"Engine piece",qty:1,fuel:"Petrol"},
-  {model:"Figo",part:"Engine piece",qty:4,fuel:"Diesel"},
-  {model:"Punto",part:"Engine piece",qty:5,fuel:"Diesel"},
-  {model:"Santro",part:"Engine piece",qty:2,fuel:"Petrol"},
-  {model:"Civic",part:"Engine piece",qty:1,fuel:"Petrol"},
-  {model:"SX4",part:"Engine piece",qty:1,fuel:"Petrol"},
-  {model:"Fiesta",part:"Engine piece",qty:1,fuel:"Petrol"}
+  {id:1,model:"Alto",part:"Engine piece",qty:2,fuel:"Petrol",img:"img/1.jpeg"},
+  {id:2,model:"WagonR",part:"Engine piece",qty:2,fuel:"Petrol",img:"img/2.jpeg"},
+  {id:3,model:"UVA",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/3.jpeg"},
+  {id:4,model:"Spark",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/4.jpeg"},
+  {id:5,model:"Aria",part:"Centre piece",qty:1,fuel:"Diesel",img:"img/5.jpeg"},
+  {id:6,model:"Eon",part:"Engine piece",qty:2,fuel:"Not specified",img:"img/6.jpeg"},
+  {id:7,model:"Etios",part:"Engine piece",qty:1,fuel:"Diesel",img:"img/7.jpeg"},
+  {id:8,model:"Zest",part:"Centre piece",qty:1,fuel:"Diesel",img:"img/8.jpeg"},
+  {id:9,model:"M800",part:"Centre piece",qty:2,fuel:"Petrol",img:"img/9.jpeg"},
+  {id:10,model:"Zen",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/10.jpeg"},
+  {id:11,model:"Figo",part:"Engine piece",qty:4,fuel:"Diesel",img:"img/11.jpeg"},
+  {id:12,model:"Punto",part:"Engine piece",qty:5,fuel:"Diesel",img:"img/12.jpeg"},
+  {id:13,model:"Santro",part:"Engine piece",qty:2,fuel:"Petrol",img:"img/13.jpeg"},
+  {id:14,model:"Civic",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/14.jpeg"},
+  {id:15,model:"SX4",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/15.jpeg"},
+  {id:16,model:"Fiesta",part:"Engine piece",qty:1,fuel:"Petrol",img:"img/16.jpeg"}
 ];
-const rows = document.getElementById("vehicleRows");
-if (rows) {
-  rows.innerHTML = "";
-  vehicles.forEach((v,i)=>{
-    const tr=document.createElement("tr");
+
+const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(n);
+
+function renderTiles() {
+  const container = document.getElementById("tilesContainer");
+  if (!container) return;
+  container.innerHTML = "";
+  vehicles.forEach((v, i) => {
     const isCentre = v.part === "Centre piece";
-    tr.innerHTML=`<td class="num">${i+1}</td><td><strong>${v.model}</strong></td><td><span class="spare-tag${isCentre ? ' centre' : ''}">${v.part}</span></td><td class="num qty">${v.qty}</td><td>${v.fuel}</td><td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>`;
+    const fuelIcon = v.fuel === "Petrol" ? "⛽" : (v.fuel === "Diesel" ? "🛢️" : "ℹ️");
+    const card = document.createElement("div");
+    card.className = "tile-card";
+    card.id = `card-${i}`;
+    card.innerHTML = `
+      <div class="tile-img-wrap" onclick="openLightbox(${i})" title="Tap to view photo">
+        <img src="${v.img}" alt="${v.model}" class="tile-img" loading="lazy">
+        <span class="tile-num-badge">#${i+1}</span>
+        <span class="tile-qty-badge">Qty: ${v.qty}</span>
+        <span class="tile-zoom-hint">🔍 Zoom</span>
+      </div>
+      <div class="tile-content">
+        <div class="tile-header">
+          <div class="tile-title">${v.model}</div>
+        </div>
+        <div class="tile-badges">
+          <span class="spare-tag${isCentre ? ' centre' : ''}">${v.part}</span>
+          <span class="tile-fuel">${fuelIcon} ${v.fuel}</span>
+        </div>
+        <div class="tile-price-box">
+          <div class="tile-price-label">
+            <span>Offer per vehicle</span>
+            <span>${v.qty} unit${v.qty > 1 ? 's' : ''}</span>
+          </div>
+          <div class="tile-input-wrapper">
+            <span class="tile-currency">₹</span>
+            <input class="tile-price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price" data-index="${i}" placeholder="Enter amount">
+          </div>
+          <div class="tile-line-total">
+            <span>Subtotal:</span>
+            <strong id="tile-subtotal-${i}">₹ 0</strong>
+          </div>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderTable() {
+  const rows = document.getElementById("vehicleRows");
+  if (!rows) return;
+  rows.innerHTML = "";
+  vehicles.forEach((v, i) => {
+    const isCentre = v.part === "Centre piece";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="num">${i+1}</td>
+      <td style="width:52px;padding:6px">
+        <img src="${v.img}" alt="${v.model}" class="table-thumb" onclick="openLightbox(${i})" title="Tap to view" loading="lazy">
+      </td>
+      <td><strong>${v.model}</strong></td>
+      <td><span class="spare-tag${isCentre ? ' centre' : ''}">${v.part}</span></td>
+      <td class="num qty">${v.qty}</td>
+      <td>${v.fuel}</td>
+      <td><input class="price-input price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="${v.model} price per vehicle in rupees" data-index="${i}" placeholder="₹ per vehicle"></td>
+    `;
     rows.appendChild(tr);
   });
 }
-const money = n => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(n);
-function total(){
-  let sum=0;
-  document.querySelectorAll(".price").forEach(input=>{
-    const p=input.value.trim()===""?0:Number(input.value);
-    const idx = Number(input.dataset.index);
-    if(Number.isFinite(p)&&p>=0&&vehicles[idx]) sum += p*vehicles[idx].qty;
-  });
-  document.getElementById("grandTotal").textContent=money(sum);
+
+renderTiles();
+renderTable();
+
+function switchView(view) {
+  const tiles = document.getElementById("tilesContainer");
+  const table = document.getElementById("tableContainer");
+  const tabTiles = document.getElementById("tabTiles");
+  const tabTable = document.getElementById("tabTable");
+  if (view === "tiles") {
+    tiles.style.display = "grid";
+    table.style.display = "none";
+    tabTiles.classList.add("active");
+    tabTable.classList.remove("active");
+  } else {
+    tiles.style.display = "none";
+    table.style.display = "block";
+    tabTiles.classList.remove("active");
+    tabTable.classList.add("active");
+  }
 }
-document.addEventListener("input",e=>{if(e.target.classList.contains("price"))total()});
-document.getElementById("quoteForm").addEventListener("submit",e=>{
+
+function openLightbox(i) {
+  const v = vehicles[i];
+  document.getElementById("lightboxImg").src = v.img;
+  document.getElementById("lightboxTitle").textContent = `#${i+1} ${v.model} (${v.part}) · Qty: ${v.qty} · ${v.fuel}`;
+  document.getElementById("lightboxModal").classList.add("active");
+}
+
+function closeLightbox() {
+  document.getElementById("lightboxModal").classList.remove("active");
+}
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+
+function total() {
+  let sum = 0;
+  vehicles.forEach((v, idx) => {
+    const inp = document.querySelector(`.tile-price-input[data-index="${idx}"]`);
+    const p = (inp && inp.value.trim() !== "") ? Number(inp.value) : 0;
+    if (Number.isFinite(p) && p >= 0) sum += p * v.qty;
+  });
+  document.getElementById("grandTotal").textContent = money(sum);
+}
+
+document.addEventListener("input", e => {
+  if (e.target.classList.contains("price")) {
+    const idx = Number(e.target.dataset.index);
+    const val = e.target.value;
+    const p = val.trim() === "" ? 0 : Number(val);
+    const v = vehicles[idx];
+    const lineTotal = (Number.isFinite(p) && p >= 0) ? (p * v.qty) : 0;
+
+    // Sync input across both Tile and Table views
+    document.querySelectorAll(`.price[data-index="${idx}"]`).forEach(inp => {
+      if (inp !== e.target && inp.value !== val) inp.value = val;
+    });
+
+    // Update tile card subtotal and active state
+    const sub = document.getElementById(`tile-subtotal-${idx}`);
+    if (sub) sub.textContent = money(lineTotal);
+
+    const card = document.getElementById(`card-${idx}`);
+    if (card) {
+      if (p > 0) card.classList.add("has-price");
+      else card.classList.remove("has-price");
+    }
+
+    total();
+  }
+});
+
+document.getElementById("quoteForm").addEventListener("submit", e => {
   e.preventDefault();
   const phoneEl = document.getElementById("phone");
   const phone = phoneEl ? phoneEl.value.trim() : "";
@@ -188,13 +376,12 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
     return;
   }
 
-  const prices = [...document.querySelectorAll(".price")];
   const quoted = [];
-  prices.forEach(input => {
-    const val = input.value.trim();
-    const idx = Number(input.dataset.index);
-    if (val !== "" && Number.isFinite(Number(val)) && Number(val) >= 0 && vehicles[idx]) {
-      quoted.push({ ...vehicles[idx], price: Number(val) });
+  vehicles.forEach((v, idx) => {
+    const inp = document.querySelector(`.price[data-index="${idx}"]`);
+    const val = inp ? inp.value.trim() : "";
+    if (val !== "" && Number.isFinite(Number(val)) && Number(val) >= 0) {
+      quoted.push({ ...v, price: Number(val) });
     }
   });
 
@@ -252,7 +439,16 @@ document.getElementById("quoteForm").addEventListener("submit",e=>{
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   if (msg) msg.style.display = "none";
 });
-document.getElementById("quoteForm").addEventListener("reset",()=>setTimeout(()=>{total();const msg=document.getElementById("formMessage");if(msg)msg.style.display="none"},0));
+
+document.getElementById("quoteForm").addEventListener("reset", () => {
+  setTimeout(() => {
+    document.querySelectorAll(".tile-card").forEach(c => c.classList.remove("has-price"));
+    document.querySelectorAll("[id^='tile-subtotal-']").forEach(el => el.textContent = "₹ 0");
+    total();
+    const msg = document.getElementById("formMessage");
+    if (msg) msg.style.display = "none";
+  }, 0);
+});
 </script>
 
 </body></html>
